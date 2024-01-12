@@ -1,0 +1,52 @@
+<!-- your_template.html -->
+<html>
+<head>
+    <title>Data Display</title>
+    <style>
+        /* Add some CSS for styling */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data from Admin</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>PassengerName</th>
+                <th>DateOfJourney</th>
+                <th>Gender</th>
+                <th>FlightNumber</th>
+                <th>PNRNumber</th>
+                <th>BaggageSpace</th>
+                <!-- Add more header columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data_to_display %}
+                <tr>
+                    <td>{{ item.PassengerName }}</td>
+                    <td>{{ item.DateOfJourney }}</td>
+                    <td>{{ item.Gender }}</td>
+                    <td>{{ item.FlightNumber }}</td>
+                    <td>{{ item.PNRNumber }}</td>
+                    <td>{{ item.BaggageSpace }}</td>
+                    <!-- Add more columns as needed -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
